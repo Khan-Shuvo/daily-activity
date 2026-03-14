@@ -1,0 +1,59 @@
+name: Pro Contribution Bot
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # বাংলাদেশ সময় সকাল ৮টা
+  workflow_dispatch:
+
+jobs:
+  auto_commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "shuvo2004@outlook.com"
+          git config --global user.name "khan-shuvo"
+
+      - name: Skip weekend
+        run: |
+          DAY=$(date +%u)
+          if [ "$DAY" -ge 6 ]; then
+            echo "Weekend detected. Skipping commits."
+            exit 0
+          fi
+
+      - name: Generate commits
+        run: |
+          COUNT=$((RANDOM % 7 + 1))
+          echo "Today's commits: $COUNT"
+
+          messages=(
+            "fix: small bug fix"
+            "feat: minor improvement"
+            "docs: update notes"
+            "chore: maintenance update"
+            "refactor: code cleanup"
+            "style: formatting update"
+            "perf: small optimization"
+          )
+
+          for ((i=1;i<=COUNT;i++))
+          do
+            DELAY=$((RANDOM % 14400))   # 0-4 hours
+            echo "Waiting $DELAY seconds..."
+            sleep $DELAY
+
+            MSG=${messages[$RANDOM % ${#messages[@]}]}
+
+            FILE="activity_$((RANDOM % 3)).txt"
+            echo "$MSG - $(date)" >> $FILE
+
+            git add .
+            git commit -m "$MSG - $(date)" || echo "No changes"
+
+            git push
+          done
