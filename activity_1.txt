@@ -1,0 +1,1 @@
+perf: small optimization - Mon Mar 16 09:59:15 UTC 2026
