@@ -31,3 +31,4 @@ refactor: code cleanup - Thu Apr 30 08:52:15 UTC 2026
 fix: small bug fix - Thu Apr 30 10:35:42 UTC 2026
 perf: small optimization - Fri May  1 07:08:31 UTC 2026
 refactor: code cleanup - Fri May  1 08:14:44 UTC 2026
+docs: update notes - Sun May  3 09:25:50 UTC 2026
