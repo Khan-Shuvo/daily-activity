@@ -74,3 +74,4 @@ fix: small bug fix - Fri May 29 10:01:05 UTC 2026
 refactor: code cleanup - Sat May 30 10:02:44 UTC 2026
 docs: update notes - Sun May 31 07:08:31 UTC 2026
 fix: small bug fix - Sun May 31 10:10:56 UTC 2026
+perf: small optimization - Sun May 31 10:28:08 UTC 2026
