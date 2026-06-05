@@ -77,3 +77,4 @@ fix: small bug fix - Sun May 31 10:10:56 UTC 2026
 perf: small optimization - Sun May 31 10:28:08 UTC 2026
 docs: update notes - Mon Jun  1 11:20:03 UTC 2026
 fix: small bug fix - Thu Jun  4 12:45:39 UTC 2026
+docs: update notes - Fri Jun  5 07:16:12 UTC 2026
